@@ -1,12 +1,12 @@
 name: Run tests
 
 on:
-  # Build at 23:00 every Sunday
-  schedule:
-    - cron: "0 23 * * 1"
-  pull_request:
   push:
-
+    paths:
+      - 'src/**'   # Only runs on changes in the src directory
+  pull_request:
+    paths:
+      - 'src/**'
 jobs:
   test-distributions:
     name: Build in containers
